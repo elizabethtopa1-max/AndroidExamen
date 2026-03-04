@@ -1,0 +1,71 @@
+<resources>
+    <string name="app_name">Calculadora</string>
+    <string name="action_settings">Settings</string>
+
+    <!-- Navigation -->
+    <string name="first_fragment_label">Calculadora de Sueldo</string>
+    <string name="second_fragment_label">Calculadora de Combustible</string>
+    <string name="next">Ir a Combustible</string>
+    <string name="previous">Ir a Sueldo</string>
+
+    <!-- Menu -->
+    <string name="menu_sueldo">Calculadora Sueldo</string>
+    <string name="menu_combustible">Calculadora Combustible</string>
+    <string name="menu_orden_servicio">Gestionar Citas</string>
+
+    <!-- App 1: Calculadora de Sueldo -->
+    <string name="hint_nombre_empleado">Nombre del Empleado</string>
+    <string name="hint_horas_trabajadas">Horas trabajadas en el mes</string>
+    <string name="hint_valor_hora">Valor por hora ($)</string>
+    <string name="btn_calcular_salario">Calcular Salario</string>
+    <string name="resultado_inicial">Resultado aquí</string>
+    <string name="error_campo_vacio">Este campo es obligatorio</string>
+
+    <!-- App 2: Calculadora de Combustible -->
+    <string name="hint_distancia">Distancia a recorrer (km)</string>
+    <string name="hint_rendimiento">Rendimiento del auto (km/gal)</string>
+    <string name="hint_precio_combustible">Precio del combustible ($/gal)</string>
+    <string name="btn_calcular_presupuesto">Calcular Presupuesto</string>
+    <string name="error_rendimiento_cero">El rendimiento no puede ser 0</string>
+
+    <!-- App 3: Gestion de Citas / Ordenes de Servicio -->
+    <string name="titulo_orden_servicio">Orden de Servicio</string>
+    <string name="titulo_catalogo_servicios">Catalogo de Servicios</string>
+    <string name="titulo_formulario_orden">Registro de Orden de Trabajo</string>
+
+    <!-- Campos del formulario -->
+    <string name="hint_nombre_cliente">Nombre del Cliente</string>
+    <string name="hint_telefono">Telefono</string>
+    <string name="hint_correo">Correo Electronico</string>
+    <string name="label_servicio">Servicio Seleccionado</string>
+    <string name="sin_servicio_seleccionado">- Toque el boton para elegir -</string>
+
+    <!-- Botones -->
+    <string name="btn_seleccionar_servicio">Seleccionar Servicio</string>
+    <string name="btn_finalizar_notificar">Finalizar y Notificar</string>
+
+    <!-- Catalogo de Servicios -->
+    <string name="instruccion_seleccionar_servicio">Seleccione un tipo de servicio:</string>
+    <string name="servicio_mantenimiento">Mantenimiento</string>
+    <string name="servicio_reparacion">Reparacion</string>
+    <string name="servicio_instalacion">Instalacion</string>
+    <string name="servicio_garantia">Garantia</string>
+
+    <!-- Descripciones de servicios -->
+    <string name="desc_mantenimiento">Revision y mantenimiento preventivo de equipos</string>
+    <string name="desc_reparacion">Diagnostico y reparacion de fallas tecnicas</string>
+    <string name="desc_instalacion">Instalacion de nuevos equipos y sistemas</string>
+    <string name="desc_garantia">Servicio cubierto por garantia del fabricante</string>
+
+    <!-- Mensajes de error -->
+    <string name="error_telefono_vacio">Ingrese un numero de telefono</string>
+    <string name="error_servicio_no_seleccionado">Debe seleccionar un servicio</string>
+    <string name="error_no_marcador">No se encontro aplicacion de llamadas</string>
+    <string name="error_no_app_correo">No se encontro aplicacion de correo</string>
+
+    <!-- Correo -->
+    <string name="asunto_correo_confirmacion">Confirmacion de Servicio</string>
+
+    <!-- Accesibilidad -->
+    <string name="desc_llamar">Realizar llamada</string>
+</resources>
