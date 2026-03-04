@@ -8,6 +8,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.view.Menu
 import android.view.MenuItem
 import androidx.navigation.findNavController
+import com.example.calculadora.ui.LaboratoriosActivity
 
 class
 
@@ -61,7 +62,7 @@ MainActivity : AppCompatActivity() {
             }
             R.id.menu_techaudit -> {
                 // Abrir TechAudit 2.0
-                val intent = Intent(this, ui.LaboratoriosActivity::class.java)
+                val intent = Intent(this, LaboratoriosActivity::class.java)
                 startActivity(intent)
                 true
             }
