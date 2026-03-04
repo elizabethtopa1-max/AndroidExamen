@@ -8,6 +8,7 @@ import androidx.lifecycle.viewModelScope
 import com.example.calculadora.data.database.AppDatabase
 import com.example.calculadora.data.entities.Equipo
 import com.example.calculadora.data.entities.Laboratorio
+import com.example.calculadora.data.repository.SyncResult
 import com.example.calculadora.data.repository.TechAuditRepository
 import kotlinx.coroutines.launch
 
@@ -56,10 +57,9 @@ class TechAuditViewModel(application: Application) : AndroidViewModel(applicatio
     fun sincronizarConNube() = viewModelScope.launch {
         _sincronizacionEstado.value = SincronizacionEstado.Loading
         val resultado = repository.sincronizarConNube()
-        _sincronizacionEstado.value = if (resultado.isSuccess) {
-            SincronizacionEstado.Success(resultado.getOrNull() ?: "Sincronización exitosa")
-        } else {
-            SincronizacionEstado.Error(resultado.exceptionOrNull()?.message ?: "Error desconocido")
+        _sincronizacionEstado.value = when (resultado) {
+            is SyncResult.Success -> SincronizacionEstado.Success(resultado.message)
+            is SyncResult.Error -> SincronizacionEstado.Error(resultado.exception.message ?: "Error desconocido")
         }
     }
 }

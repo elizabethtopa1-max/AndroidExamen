@@ -9,6 +9,11 @@ import com.example.calculadora.data.entities.Laboratorio
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 
+sealed class SyncResult {
+    data class Success(val message: String) : SyncResult()
+    data class Error(val exception: Exception) : SyncResult()
+}
+
 class TechAuditRepository(
     private val laboratorioDao: LaboratorioDao,
     private val equipoDao: EquipoDao
@@ -56,7 +61,7 @@ class TechAuditRepository(
         }
     }
 
-    suspend fun sincronizarConNube(): Result<String> {
+    suspend fun sincronizarConNube(): SyncResult {
         return withContext(Dispatchers.IO) {
             try {
                 val laboratorios = laboratorioDao.getAllLaboratorios().value ?: emptyList()
@@ -79,9 +84,9 @@ class TechAuditRepository(
                     }
                 }
 
-                Result.success("Sincronización exitosa: $laboratoriosEnviados laboratorios y $equiposEnviados equipos enviados")
+                SyncResult.Success("Sincronización exitosa: $laboratoriosEnviados laboratorios y $equiposEnviados equipos enviados")
             } catch (e: Exception) {
-                Result.failure(e)
+                SyncResult.Error(e)
             }
         }
     }
