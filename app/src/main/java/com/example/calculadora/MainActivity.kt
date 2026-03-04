@@ -59,6 +59,12 @@ MainActivity : AppCompatActivity() {
                 startActivity(intent)
                 true
             }
+            R.id.menu_techaudit -> {
+                // Abrir TechAudit 2.0
+                val intent = Intent(this, ui.LaboratoriosActivity::class.java)
+                startActivity(intent)
+                true
+            }
             R.id.action_settings -> true
             else -> super.onOptionsItemSelected(item)
         }
