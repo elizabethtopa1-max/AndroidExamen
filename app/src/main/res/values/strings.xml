@@ -12,6 +12,7 @@
     <string name="menu_sueldo">Calculadora Sueldo</string>
     <string name="menu_combustible">Calculadora Combustible</string>
     <string name="menu_orden_servicio">Gestionar Citas</string>
+    <string name="menu_techaudit">TechAudit 2.0</string>
 
     <!-- App 1: Calculadora de Sueldo -->
     <string name="hint_nombre_empleado">Nombre del Empleado</string>

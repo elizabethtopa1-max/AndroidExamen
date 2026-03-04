@@ -8,6 +8,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.view.Menu
 import android.view.MenuItem
 import androidx.navigation.findNavController
+import com.example.calculadora.ui.LaboratoriosActivity
 
 class
 
@@ -56,6 +57,12 @@ MainActivity : AppCompatActivity() {
             R.id.menu_orden_servicio -> {
                 // Abrir la Activity de Gestion de Ordenes de Servicio
                 val intent = Intent(this, OrdenServicioActivity::class.java)
+                startActivity(intent)
+                true
+            }
+            R.id.menu_techaudit -> {
+                // Abrir TechAudit 2.0
+                val intent = Intent(this, LaboratoriosActivity::class.java)
                 startActivity(intent)
                 true
             }
