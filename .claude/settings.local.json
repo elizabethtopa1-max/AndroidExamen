@@ -9,7 +9,12 @@
       "Bash(git push:*)",
       "Bash(gh pr create:*)",
       "Bash(git merge:*)",
-      "Bash(git pull:*)"
+      "Bash(git pull:*)",
+      "Bash(gradlew.bat assembleDebug:*)",
+      "Bash(.gradlew.bat assembleDebug:*)",
+      "Bash(cmd /c:*)",
+      "Bash(dir:*)",
+      "Bash(./gradlew assembleDebug:*)"
     ]
   }
 }
