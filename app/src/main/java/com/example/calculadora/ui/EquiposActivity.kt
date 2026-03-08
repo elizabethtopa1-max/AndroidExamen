@@ -56,9 +56,14 @@ class EquiposActivity : AppCompatActivity() {
     }
 
     private fun setupRecyclerView() {
-        adapter = EquipoAdapter { equipo ->
-            mostrarDialogoEditarEquipo(equipo)
-        }
+        adapter = EquipoAdapter(
+            onEquipoEdit = { equipo ->
+                mostrarDialogoEditarEquipo(equipo)
+            },
+            onEquipoDelete = { equipo ->
+                mostrarDialogoEliminarEquipo(equipo)
+            }
+        )
 
         rvEquipos.layoutManager = LinearLayoutManager(this)
         rvEquipos.adapter = adapter
@@ -185,5 +190,17 @@ class EquiposActivity : AppCompatActivity() {
         }
 
         dialog.show()
+    }
+
+    private fun mostrarDialogoEliminarEquipo(equipo: Equipo) {
+        AlertDialog.Builder(this)
+            .setTitle("Eliminar Equipo")
+            .setMessage("¿Está seguro de eliminar ${equipo.nombre}?")
+            .setPositiveButton("Eliminar") { _, _ ->
+                viewModel.deleteEquipo(equipo)
+                Toast.makeText(this, "Equipo eliminado", Toast.LENGTH_SHORT).show()
+            }
+            .setNegativeButton("Cancelar", null)
+            .show()
     }
 }
