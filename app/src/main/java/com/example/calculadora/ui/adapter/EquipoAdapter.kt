@@ -13,7 +13,8 @@ import com.example.calculadora.data.entities.Equipo
 import com.example.calculadora.data.entities.EstadoEquipo
 
 class EquipoAdapter(
-    private val onEquipoEdit: (Equipo) -> Unit
+    private val onEquipoEdit: (Equipo) -> Unit,
+    private val onEquipoDelete: (Equipo) -> Unit
 ) : ListAdapter<Equipo, EquipoAdapter.EquipoViewHolder>(EquipoDiffCallback()) {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): EquipoViewHolder {
@@ -31,6 +32,7 @@ class EquipoAdapter(
         private val tvNombre: TextView = itemView.findViewById(R.id.tvNombreEquipo)
         private val tvEstado: TextView = itemView.findViewById(R.id.tvEstadoEquipo)
         private val ivEdit: ImageView = itemView.findViewById(R.id.ivEditEquipo)
+        private val ivDelete: ImageView = itemView.findViewById(R.id.ivDeleteEquipo)
 
         fun bind(equipo: Equipo) {
             tvNombre.text = equipo.nombre
@@ -44,6 +46,10 @@ class EquipoAdapter(
 
             ivEdit.setOnClickListener {
                 onEquipoEdit(equipo)
+            }
+
+            ivDelete.setOnClickListener {
+                onEquipoDelete(equipo)
             }
         }
     }
